@@ -1,0 +1,36 @@
+# Full project environment (EDA, training, experiment tracking, testing, serving)
+# Install with:  pip install -r requirements.txt
+
+# --- core data / ML ---
+pandas==2.3.3
+numpy==2.4.6
+scikit-learn==1.9.0
+xgboost==3.3.0
+joblib==1.5.3
+
+# --- visualization ---
+matplotlib==3.10.9
+seaborn==0.13.2
+
+# --- experiment tracking ---
+mlflow==3.14.0
+
+# --- API serving ---
+fastapi==0.139.0
+uvicorn[standard]==0.51.0
+pydantic==2.13.4
+python-multipart==0.0.20
+
+# --- monitoring ---
+prometheus-client==0.25.0
+
+# --- data acquisition ---
+ucimlrepo==0.0.7
+
+# --- testing / CI ---
+pytest==9.1.1
+httpx==0.28.1
+
+# --- notebooks ---
+jupyter==1.1.1
+nbconvert==7.17.1

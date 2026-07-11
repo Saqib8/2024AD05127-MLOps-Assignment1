@@ -1,0 +1,12 @@
+# Tell Grafana to load JSON dashboards from the mounted folder.
+apiVersion: 1
+
+providers:
+  - name: "Heart Disease Dashboards"
+    orgId: 1
+    folder: ""
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

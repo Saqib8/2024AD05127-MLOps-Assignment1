@@ -1,0 +1,17 @@
+%% Heart Disease MLOps architecture (Mermaid source).
+%% Render at https://mermaid.live or with the Mermaid CLI.
+flowchart LR
+    A[UCI Heart Disease Dataset<br/>download_data.py] --> B[EDA + Cleaning<br/>ColumnTransformer]
+    B --> C[Model Training<br/>LogReg / RF / XGBoost<br/>GridSearchCV + CV]
+    C --> D[MLflow Tracking<br/>params / metrics / plots / models]
+    D --> E[Model Artifact<br/>.joblib Pipeline + metadata]
+
+    C -. triggers .-> CI[GitHub Actions CI/CD<br/>lint -> test -> train -> docker]
+    E --> CI
+    CI --> F[Docker Image<br/>FastAPI + model]
+    F --> G[FastAPI Service<br/>/predict /health /metrics]
+    G --> H[Kubernetes<br/>Deployment + Service<br/>LoadBalancer / Ingress]
+    H --> I[Client<br/>curl / Postman / Swagger]
+
+    G --> P[Prometheus<br/>scrapes /metrics]
+    P --> Gr[Grafana<br/>dashboards]

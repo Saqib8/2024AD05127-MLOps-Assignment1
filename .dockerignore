@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.git/
+.github/
+notebooks/
+mlruns/
+report/
+k8s/
+tests/
+*.ipynb
+.pytest_cache/
+.venv/
+venv/
+data/*.csv
+!data/heart_disease_clean.csv
+*.md
+monitoring/

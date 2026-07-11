@@ -1,0 +1,78 @@
+{
+  "best_model": "logistic_regression",
+  "best_params": {
+    "model__C": 1.0,
+    "model__penalty": "l2"
+  },
+  "metrics": {
+    "accuracy": 0.8852459016393442,
+    "precision": 0.8387096774193549,
+    "recall": 0.9285714285714286,
+    "f1": 0.8813559322033898,
+    "roc_auc": 0.9664502164502166,
+    "cv_roc_auc": 0.9024931590148981
+  },
+  "all_results": {
+    "logistic_regression": {
+      "metrics": {
+        "accuracy": 0.8852459016393442,
+        "precision": 0.8387096774193549,
+        "recall": 0.9285714285714286,
+        "f1": 0.8813559322033898,
+        "roc_auc": 0.9664502164502166,
+        "cv_roc_auc": 0.9024931590148981
+      },
+      "best_params": {
+        "model__C": 1.0,
+        "model__penalty": "l2"
+      }
+    },
+    "random_forest": {
+      "metrics": {
+        "accuracy": 0.8852459016393442,
+        "precision": 0.8387096774193549,
+        "recall": 0.9285714285714286,
+        "f1": 0.8813559322033898,
+        "roc_auc": 0.9545454545454546,
+        "cv_roc_auc": 0.8983694244563811
+      },
+      "best_params": {
+        "model__max_depth": null,
+        "model__min_samples_split": 5,
+        "model__n_estimators": 100
+      }
+    },
+    "xgboost": {
+      "metrics": {
+        "accuracy": 0.9016393442622951,
+        "precision": 0.8666666666666667,
+        "recall": 0.9285714285714286,
+        "f1": 0.896551724137931,
+        "roc_auc": 0.9307359307359307,
+        "cv_roc_auc": 0.8702707115750595
+      },
+      "best_params": {
+        "model__learning_rate": 0.05,
+        "model__max_depth": 5,
+        "model__n_estimators": 200
+      }
+    }
+  },
+  "feature_columns": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak",
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "trained_at": "2026-07-11T07:38:10.471805+00:00",
+  "sklearn_pipeline": true
+}
