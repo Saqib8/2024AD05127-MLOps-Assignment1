@@ -1,5 +1,8 @@
 # Heart Disease Prediction: End-to-End MLOps Report
 
+**Name:** Mohammad Saqib S. Koti
+**Roll No:** 2024AD05127
+
 **Course:** Machine Learning Operations (MLOps), AIMLCZG523
 **Assignment:** 01, End-to-End ML Model Development, CI/CD & Production Deployment
 **Dataset:** Heart Disease UCI (Cleveland), UCI Machine Learning Repository
@@ -230,9 +233,8 @@ uvicorn api.main:app --port 8000       # 5. serve (or docker compose up)
 
 ## 11. Repository & Deliverables
 
-* **Repository:** `<add your GitHub URL here>`
+* **Repository:** https://github.com/Saqib8/2024AD05127-MLOps-Assignment1
 * **Deployed API:** local Kubernetes / Docker (access via README sections 4 & 7)
-* **Video walkthrough:** `<add link here>`
 
 ### Deliverables checklist
 - [x] Code, Dockerfile(s), requirements files
