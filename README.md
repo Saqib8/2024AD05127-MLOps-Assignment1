@@ -6,7 +6,15 @@ serves it as a cloud-ready, monitored REST API.
 
 > **Course:** Machine Learning Operations (MLOps), AIMLCZG523, Assignment 01
 
-![Architecture](report/screenshots/architecture_diagram.png)
+**Pipeline flow:**
+
+```
+UCI dataset -> EDA + cleaning -> model training (LogReg / RF / XGBoost)
+   -> MLflow tracking -> .joblib pipeline artifact
+   -> GitHub Actions CI (lint -> test -> train -> docker build)
+   -> Docker image -> FastAPI /predict -> Kubernetes (LoadBalancer)
+   -> Prometheus -> Grafana
+```
 
 ## Highlights
 

@@ -20,9 +20,28 @@ monitoring.
 
 **Problem type:** binary classification (0 = no heart disease, 1 = disease present).
 
-![Architecture Diagram](screenshots/architecture_diagram.png)
+**End-to-end pipeline flow:**
 
-*Figure 1: End-to-end MLOps architecture.*
+```
+Data & modelling:
+  UCI Heart Disease dataset (download_data.py)
+    -> EDA + cleaning (ColumnTransformer: impute, scale, one-hot encode)
+    -> Model training (Logistic Regression / Random Forest / XGBoost, GridSearchCV + 5-fold CV)
+    -> MLflow tracking (params, metrics, confusion-matrix & ROC plots, models)
+    -> Model artifact (.joblib pipeline + model_metadata.json)
+
+CI/CD (GitHub Actions):
+  flake8 lint -> pytest -> train model -> build & smoke-test Docker image
+
+Serving & deployment:
+  Docker image (FastAPI + trained model)
+    -> FastAPI service (/predict, /health, /metrics, /docs)
+    -> Kubernetes (Deployment + Service, exposed via LoadBalancer / Ingress)
+    -> Client (curl / Postman / Swagger UI)
+
+Monitoring:
+  FastAPI /metrics -> Prometheus (scrape) -> Grafana (dashboards)
+```
 
 ---
 
